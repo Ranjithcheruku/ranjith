@@ -1,0 +1,28 @@
+wdhfefkjrwkjhgjwrkgjhrkjg
+egggggggggggggggggggggggggggggggggggggggggggggg
+gggggggggggggggggggggggggggggggggggggggggggg
+ggggggggggggggggggggggggggggg
+
+
+
+cd path
+
+npm -- node package manager
+	-- can be utilized to download node js modules (libriaries)
+
+create a new js file 
+command to execute node.js program
+	node fileName.js 
+
+Java 
+	-- multi threaded 
+		-- it can utilize multiple cpu cores at any point in time.
+	-- Blocking code
+	-- When you are using computational operations -- good choice is to use Java
+
+JavaScript or NodeJS
+	-- Single threaded
+		-- it can only utlize one cpu core at any point in time.
+	-- non blocking I/O, 
+	-- asynchronous
+	-- When you have to deal with I/O operations, asynchronous operations. Beter choice would be using Node.js

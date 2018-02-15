@@ -1,0 +1,20 @@
+1) What is block scoped variables and functions? explain by example? why do we need to use them?
+	2) what is const keyword and why do we use it?
+	3) arrow functions? what is lexical this? explain with examples?
+	4) what are default parameters in functions?
+	5) Rest parameter with an example?
+	6) spread operator with an example?
+	7) String interpolation with example?
+	8) Object short hand properties?
+		method short hand declarations
+		property short hand declarations
+	9) Object and array matching (destructuring), parameter context matching, default values in parameter, object, array matching with example?
+	11) import and export with an example? explain export with deafult keyword?
+	12) what is class? all below with examples?
+		-- constructors
+		-- extends keywords with example?
+		-- adding prototype methods.
+		-- super keyword?
+		-- static members declrations?
+		-- getters and setters?
+	13) What is a promise and promise chaining of es6? with example?

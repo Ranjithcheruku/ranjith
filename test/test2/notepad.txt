@@ -1,0 +1,101 @@
+Viewer 1@All: functions : 
+
+
+what is an iife? show an example
+What is a closure?
+what is hoisting?
+explain closure and hoisting by example?
+what will the output of those console.log statements below?
+	var a = 20;
+	function func1() {
+	  console.log('func1 is executed');
+	console.log(a); // what is the value of a (1q)
+	  var a = 30;
+	console.log(a)// what is the value of a (2q)
+	}
+	func1();
+	console.log(a)// what is the value of a; (3q)
+
+what is this keyword? 
+what is window? 
+what will the output of following ?	
+	function func2() {
+	  console.log(this)
+	}
+
+	func2() ;// what will be the output of this keyword?
+
+what is call, apply and bind in javascript? 
+
+explain with an example of using call, apply, bind in javascript?
+
+
+
+HTML 
+
+	-- What is an element
+	-- What is an attribute
+	-- What is a class
+	-- what is an ID
+	-- List all html tags you are aware -- why we use each tag
+	-- List diff between html4 and html5
+	-- Semantic elements
+	-- Storage API -- methods used and code snippets used in storage api
+	-- Web Workers -- web workers 
+	-- diff between svg and canvas
+
+DOM (accessing html using javascript)
+
+nippets
+		-- by id, by classname, by tagname, queryselectorall, child selector, descendent selector, 
+	-- \/*
+	-- write all onclick, onmouseover attibutes usage in html examples
+	-- usage of addEventlistener methods parameters with examples
+	-- what is event propagation
+	-- what is event bubbling by example
+	-- what is event capturing by example
+	-- what is event delegation by example?
+	-- what is usage of detailed usage of event.preventDefault, event.stopPropagation(), event.stopImmediatePropagation() with examples?
+
+
+Following are requirements to create a Todo app only using javascript and html
+
+	-- Create a todo application using java script
+		-- use following methods if needed:
+			document.creatTextNode
+			document.createElement
+			parentElement.appendChild(Node);
+			parentElement.removeChild(Node);
+
+		-- when the page loads 
+			-- There must be a two input (task name, priority) and a button (add task)
+			-- there must and empty ul with id=&quot;demo&quot;
+		-- when you enter task name and priority and click on the button. 
+-- within the ul with id="demo" you must add a <li> task name, priority and remove button<li>. After the li is added the input boxes must be empty. 
+			-- So user can enter a new task name and priority. 
+			-- When you click on the remove button iniside the list item. The respective list item must be removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

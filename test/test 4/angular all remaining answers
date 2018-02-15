@@ -1,0 +1,362 @@
+angular all remaining answers
+
+1q,what are componenets in angularjs?
+they are simpler configuration than plain directive and promote sane defaults and best practices optimized for componenet based architecture,, writing component directives will make it easier to upgrade to angular 
+
+there is function component, type component, service component filter component provider component etc 
+then to top it off i found that a module component is a component consist of directives services filters providers ,templates global API and testing mocks ,
+
+
+components roughly  called as directives if we want to update to angular 2 we should use components 
+
+
+app.directives ('list',function(){
+	  return{
+	  scope:{
+	  items:'='
+	  }
+	  
+	  templateur:'list.html',
+	  controller.function list ctrl(){
+	  controllers;'ctrl',
+	  bind to controller:true
+	   }
+
+       }
+
+   }}
+
+*******************************
+.component
+appcomponent('list',{
+	bindings:{
+	items:'='
+	templateurl:'list.html',
+	controller.functionlist ctrl(){
+
+	}
+	}
+})
+
+**************************************
+
+
+
+what is difference between components and directives 
+
+   in components we use components@meta data
+   it is simpler configuration 
+   easy to understand 
+   used to create the ui widgets
+   used to break the components  into smaller components 
+   uses controllers as syntax 
+   uses controllers instead of link
+
+
+   directives 
+
+   Directive could be A attributes E elements C class M method
+   in directives we use directives@meta data 
+   directives should be used when you want the DOM application used outside the angular event loop
+
+  4q, when to use components instead of directives
+   directive should be used when you need to create the DOM manipulations outside the angular loop
+
+  
+   if we want to write the complex code which is easy to understand in components we can use directives but components which is roughly called as a UI directives
+
+
+   5, lifecycle methods in angular components ?
+   ngOnChange
+   ngDoCheck
+   ngAfterContentChecked
+   ngAfterContentlnit
+   ngOnViewChecked
+   ngOnDestroy
+
+   what are bindings in components
+   explain with <, @, =, & with examples (code snippet)
+	-- diff between controller with $scope and controllerAs Syntax with this keyword. why do we use them? why is it a good practice to use it?
+	-- intercomponent communication with example in angularjs?
+
+bindings are like directives 
+The ngBind directive sets the text content of an element with the value of a given expression and updates the text content when the value of the expression changes
+
+in other words ng-bind="somevalue"
+
+replaces the text content of the element with the value of $scope.SomeValue
+updates the text content pf the element when the value of $scope.somevalue changes 
+
+this directive as the form 
+as attribute 
+
+<ANY ng-bind="expression">
+...
+</ANY>
+
+as css class
+<ANY class="ng-bind:expression;">
+...
+</ANY>
+
+ng - bind is preferred if a template is momentarily displayed by the browser in its raw state before angular compiles it since ng -bind is an element attribute it makes the bindings invisible to the user while the page is loading
+
+Arguements 
+
+ng bind type is expression the expression to evaluate
+
+the example binds a scope variable 'name' to an input element then using an expression to display the value of the variable 
+
+Angularjs/html
+name:<input type ="text" ng-model="name"/>
+<br/>
+message:hello,{{ name }}
+
+javascript
+<script>
+ angular.module("my app",[])
+  .controller("Example1controller",function($scope){
+  $scope.name = "world";
+  }
+  );
+  </script>
+
+  ng Nonbindable directive tells angular not to compile or bind the componenets of the current DOM element this is useful if the element contains what appears  to be angular directive and bindings but which should be ignored by A ngular this could be the case if you have a site that dispalys snippets of code for instance 
+
+
+  the directive as the form
+  as attribute
+  <ANY>
+  ...
+  </ANY>
+
+  as css class
+  <ANY class="=" ">...</ANY>
+
+  example the following code fragment uses the ngnonbindable directive to display an expression instead of evaluate it
+
+  angular js html
+  <div>Normal: {{ 1 + 2 }} </div>
+  <div ng-non-bindable>Ignored:  {{ 1 + 2 }}</div>
+
+  javascript 
+  <script>
+   angular.module("myAPP", [])
+   .controller("Example1controller", function($scope) {
+   }
+   );
+   </script>
+
+   output will be 3 
+
+   6.what are directives in angular js and why do we use them?
+	-- what are custom directives in angular js? 
+		-- write all the below features by examples (code snippet are manditory) for all below features?
+			-- restrict
+			-- scope (shared, isolated, inherited), 
+				-- isolate scope with @, =, &
+			-- template, 
+			-- templateUrl
+			-- transclude,
+			-- link,
+				-- scope, element, attrs
+
+
+directives could be elements class attributes methods
+we can create our own custom directives
+ A-arttributes E-elements C-class M-method
+
+ A. shared scope(false)
+
+every model defined in the parent controller will be available in the directive
+
+
+
+B.inherited scope(true)child scope
+
+every model defined in the parent controller will be available in the directive
+
+every model defined within the directive will not be available outside
+
+C.isolated scope{ }
+
+
+every model defined in the parent controller will not be available in the directive
+
+every model defined within the directive will not be available outside
+
+
+7.Explain Factory and service by example and theory?
+	-- Diff between Factory and service?
+
+uses singleton their should be only one object through out the application
+
+Factory
+
+it is a singleton application
+uses return keyword
+shared between the controllers
+we can return any data type undefined ,number,boolean etc..
+
+
+
+service
+uses this keyword
+it gives object back 
+shared betweeen the controllers
+
+Restful Web services & http & promises:
+	-- What are RESTful web services?
+	 nodejs ,java.dotnet...
+webpage-----restful webservices implementation-----database
+it supports the http protocol
+
+
+	-- Why do we use RESTful web services within ui?
+
+
+we can acess restful web services using http url methods
+can support xml,json custom defined message formats
+
+	-- What Do we use to invoke RESTful web services from UI(javascript)?
+
+	Step 1: Model the data
+Most commonly  service provides its data in either XML or JSON format. Unless the responses are really trivial (e.g. lists of strings),  generally don’t save time by accessing them directly. While using low-level APIs or a map based representation for JSON is possible, going that way doesn’t really improve the readability of your code. Sometimes it is possible to get your hands on the original Java model they use at the providing end, 
+
+
+Step 2: Fetch the data
+
+The actual usage of the JAX-RS client API is dead simple. Still, I wrapped that part into a service class to separate that from the actual UI code. Your UI code doesn’t necessarily need to know whether it is accessing a REST service, a Web Service or a DB. The public API reveals just the reverse engineered WeatherResponse class for the actual UI code.
+
+The usage of the JAX-RS client API mostly happens around Client and WebTarget objects. The Client object is the thing that actually handles all the communication. Although they aren’t especially heavy, I only created one instance of them per service class as the suggestion is to use a minimum amount of instances. In our case the client needs no special configuration, so we just get an instance with default settings from the ClientBuilder. 
+
+ What are http verbs? why do we use the following http verbs?
+		-- GET, post, PUT, Delete
+GET, ---retrive the information
+post, ---create the new record
+PUT, ---modify or change the existing record
+Delete----completley delete thr record
+
+	-- what are http status and why do we use them?
+
+	HTTP status codes are standard response codes given by web site servers on the Internet.
+
+The codes help identify the cause of the problem when a web page or other resource does not load properly.
+
+The term HTTP status code is actually the common term for the HTTP status line that includes both the HTTP status code and the HTTP reason phrase.
+
+HTTP status codes are sometimes called browser error codes or internet error codes.
+
+
+	-- what are the commonly used HTTP Status code? what is the meaning of each HTTP status code? 
+200---sucess
+201(created)
+400-----client side error
+400--bad request
+401--not authorized
+403---forbidden
+404--not found
+500---server side error
+510,503,504
+
+
+
+	-- Explain $http and $q with example?
+
+
+$http---using this we can make the ajax calls
+$q---promises
+
+
+-- What is a promise? what is deffered object? Why we use them?
+synchronous (blocking code)
+asynchronous(unblockig code)
+we have 3 methods 
+1.resolve
+2.reject
+3.promise.then(resolveFunc,rejectFunc)
+	-- What is promise chaining? why do we use them?
+	-- what are providers in angular js?
+	-- what is the sequence of executions? 
+		-- config method, run method, directive template, directive link function, controllers
+1.configuration method---first this method is executed
+2.run method--suppose if you have js code to be executed before anything in application load
+3.directives--loaded before the controllers
+4.controllers---controllers arec loaded and executed
+5.directive link function
+
+
+-- what is promise chaining? write a sample code?
+var fs =require('fs');//fs.read file does not wait for the line to be executed it jumps to the next lineafter that the program is executed call back funnction would be invoked
+NON BLOCKING CODE(ASYNCHRONOUS)
+EXAMPLE:
+console.log('program has started');
+fs.readFile('notepad.txt,'UTF-8',function(err,data){
+	if(err){
+	console.error(err);
+	return;
+	}
+	console.log(data);
+	console.log(file write operation is complete)
+	console.log('program is ended');
+}
+
+BLOCKING CODE(SYNCHRONOUS)
+EXAMPLE:
+var result=fs.readFilesync('FileName',encoding)
+example:
+console.log(1);
+console.log(2);
+setTimeout(function(){
+	console.log(3)
+},10000);
+setTimeout(function(){
+	console.log(4)
+},0);
+console.log(5);
+console.log(6);
+
+
+synchronous----1,2,3 wait for 10 seconds 4,5,6 is executed
+asynchronous----1,2,5,6,4,3 is executed it does not wait 
+
+
+	
+	-- what is callback hell? what is solution for to avoid call back hell?
+
+function passed as a parameter into another function so that the function could invoke and execute at the endfs.readFile(....,function(){
+	
+})
+
+
+promise channing is used instead of call back hell
+clean way to write the code 
+easy to understand
+re organise the code would be much easier
+
+
+
+.config
+ is used to provide registration and configuration phases
+ Provider has to be configured first
+ config would be the first method that would be executed
+run method 
+ if we have a javascript code which needs be executed before anything in application loads
+ directive
+  loaded before the controllers
+controllers
+controllers are loaded & executed
+
+ directive link function
+a, after controllers are loaded
+
+
+
+ When it comes to directive compiling, linking, and general timing in AngularJS,  the topic is because the directive workflow is a complex multi-faceted process that keeps revealing new quirks and edge-cases. Today, I want to take a look at how link timing works in directives that use a templateUrl in different rendering contexts.
+
+ Pre-linking function: Executed before the child elements are linked. Not safe to do DOM transformation since the compiler linking function will fail to locate the correct elements for linking.
+
+Post-linking function: Executed after the child elements are linked. It is safe to do DOM transformation in the post-linking function.
+
+
+  

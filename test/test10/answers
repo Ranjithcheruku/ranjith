@@ -1,0 +1,42 @@
+
+
+Methods of React Components
+	11) list all lifecycle methods in React component in sequence?
+			when do we use each method? any real time use cases if known? 
+			Explain each method with an example and description?
+
+in life cycle methods there is a sequence we can maintain or do not 
+ 
+ Component life cycle methods
+Each components has  life cycle methods that you can override to run code at particular times in the process methods prefixed with will are called right before something happens and methods prefixed with did are called right after something happens 
+
+Mouniting 
+These methods are called when an instance of a component is being created and inserted into the dom 
+Constructor 
+Componentwillmount 
+Render
+Componentdid mount
+
+Updating 
+An update can be caused by changes to props or state these methods are called when a componenet is being rendered
+Component will recieveprops
+Shouldcomponent update 
+Component will update 
+Render
+Componentdid mount 
+
+
+Unmounting 
+This methods is called when a component is being removed from the dom
+
+Component will mount 
+Component  will mount is invoked immediately before mounting occurs ,it is called before render ,there fore setting state synchronous in this method will not trigger a re rendering ,avoid introducing any side effects or subscription in this method 
+This is the only lifecycle hook called on server rendering generally we recommend using the constructor 
+
+
+Component did mount 
+Component did mount is invoked immediately after a component is mounted initialization that requires dom nodes should go here .if you need to load data from a remote endpoint this a good place to instantiate the network request setting state in this method will trigger a re rendering  
+
+
+
+

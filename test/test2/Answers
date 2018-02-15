@@ -1,0 +1,473 @@
+Answers
+iife:immediately invoked function expression
+it executes immediately after its created it has nothing to do  with any event handler  for any events
+such as document on load
+this first poranthesis (function(){....}) tutns the code with in this case a function into an expression and the second pair of poranthesis (function (){.....}()calls the function that results from that evaluated expression)
+
+what is closure?
+closures are very important feauture of java script  it allows for the testing of functions and grants the inner function full access to all the variables and functions defined inside the outer function 
+
+what is hoisting
+
+hoisting is the interpreters action of movimg all variable and function declaration to the top of current scope however only the actual declarations are hoisted 
+var a =40
+console.log(a);
+console.log(b;//undefined hoisting
+(var b declaration is automatically moved to top)
+var b = 50
+consol.log(func1); function func1(){ console.log (function 1 executed')}
+var fuc2 = function (){ console.log(function2executed');
+}
+
+closure with example?
+java script variables can belong to the local or global  scope global variables can be made local (private) with closures
+
+
+global variables 
+function an access all defined inside  the function  like this 
+function my function(){
+	var a =4;
+	return a*a;
+}
+but function can also access variables defined outside the function 
+example :
+var a=4;
+function my function (){
+	return a * a;
+}
+
+what is this keyword?
+the thing called this,is the object that owns this javascript code the value of this,when used in a function is the object that owns the function the value of this when used in an object itself the this keyword in an object constructor does not have a value it is a keyword .
+
+what is window object ?
+the window  object  is supported by all browsers it represents the browsers window.all global javascript objects  functions and variables automatically become members of the window object
+
+what is an element?
+An html element usually consists of a start tag and end tag with the content inserted in between 
+<tag name> content goes here .....</tagname>
+the html element is everything from start tag to the end tag 
+
+what is attribute ?
+html attribute is a modifier of an html element type an attribute either modifies the default functionality of an element type or provides functionality to certain element types usable to function correctly with out them. in html syntax an attribute is added to an html start tag
+
+what is class attribute ?
+the class attribute specifies one or more class names for an element  the class attribute is mostly used to point to a class in a style sheet however it can aslobe used by a javascript to make changes to html elements with a specified class
+
+what is  an id ?
+the id attribute specifies a unique id for an html element the value must be unique with in the html document .the id attribute is most used to point to a style in a style sheet and by javascript to manipulate the element with specific id
+
+what is call  apply and bind in javascript 
+there are three methods allows you to change the value of this for a given function those methods are
+function .prototype.call(),
+function.prototype.apply() and 
+function.prototype.bind() they are slightly different but some times its difficult to rememeber
+function.call(thisArg, arg1,arg2,...)
+the Arg :
+the value of this provided for the call to a function if the method is a non function in non script mode,null and object and primitive values will be converted to objects 
+arg1 and arg 2 are the arguements for the function
+
+example :
+function product (name,price){
+this.name =name ;
+this . price = price){
+	
+}
+
+function food (name ,price) {
+	product .call (this ,name,price);
+	this.category = 'food';
+}
+
+function ball (name ,price) {
+	product.call(this,name,price);
+	this category = 'ball';
+}
+var cheess = new food ('feta',5);
+var fun = new ball ('robot',40);
+
+
+the bind method creates a new function that when called has its this keyword set to the provided value,witha given sequence pf arguements proceeding any provided \
+when the new function is called 
+this arguement ;
+the value to be passed as this parameter to the atrget function when the bound function is called the value is ignored if the bound function is construvted using the new operator
+
+eXAMPLE: 
+this . x =9; // this refers to global window  object here in the browser
+var module = {
+	x:81,
+	get x : function() { return this.x;};
+	
+
+	module.getX(); // 81
+
+	var retrive X =module.get X ;
+	retrieveX();
+
+  // returns9 - the function  gets invoked at the global scope
+
+  // create a new function  with this bound to module 
+  // global var x with module s property x
+  var boundGetX();//81
+          
+the apply method calls a function with a given this value and arguements provided as an array 
+func.apply(thisArg,[argsarray])
+apply is very similar to call () except for the type of arguements it supports you use an arguements array instead of a list od arguements
+exaple: func.apply(this,[ 'eat',bananas]) or an Array object for example; func.apply(this,new Array ('eat','bananas')).
+
+example using apply to chain constructors
+
+function.prototype.construct = function (aArgs) {
+	var oNew = object.create (this.prototype);
+	this .apply(oNew,aArgs);
+	return o New;
+}
+
+the HTML <html> element represents the root (top level element) of an html document so it is alos reffred to as  the root element all other elements must be descendants of this element 
+
+link:
+specifies relation ships between the current document and an external resource possible users for this element include defining a relational framework for navigation
+
+meta :
+represents metadata that cannot be represented by other HTML meta related elements like <base> <link> ,<script> or <title>.
+
+style:
+contains style information for document by default the style instructors written inside that elemnt are expected to be  CSS.
+
+
+sectioning root
+HTML<body> element represents the content of an HTML document there can be only one <body> element in a document .
+
+contenet sectioning 
+in this elements allow to oraganise the doocument contenet into logical pieces create a broad outline for the page content 
+including header  and footer navigation
+
+<address> the HTML <address> element  supplies contact information for its neares <article> or <body>  ancestor ; in the latter case it applies to the whole document
+
+<article> 
+the HTML <article> element 
+represe]ts a self contained composition in a document page application or site which is intended to be indepenedently distribute or usable
+
+
+<aside>
+the HTML<aside>   element 
+represents a section of a document  with content connected tangentially to the main content of the document (often presented as a sidebar)
+
+ <footer>
+ the HTML <footer> represents a footer for its nearest sectioning content or sectioning  root elemnt 
+
+ a footer element contains information about the author
+
+
+ <header>
+  <header> the HTML <header> element represents  introductory contenet typically a group of introductory or navigational aids
+
+  <hgroup> the  HTML <hgroup> element represents a multi level heading for a section of a document .it groups a set of <h1>-<h6>elements
+
+
+<nav>
+the HTML <nav> element represents   a secotion of a page whose purpose is to provide navigation links either in the document or other document  menus table indexes
+
+
+<section>
+the  HTML <section> element represents a standalone section  of functionally contained with in an HTML document typically with a heading
+
+
+
+
+text contents 
+
+use HTML text content elements to organise blocks or sections  of  content placed between the opening <body> and closing </body> tags
+
+<blockquote>
+the HTML <blockquote> elements (or HTML block quotation element ) indicates that the enclosed text is an extended quotation usually this is rendered visually by indentation 
+
+<add>
+the HTML <add> element indicates the description of term in a description list (<dl>)
+
+<div> the HTML <div> element is the generic container for flow content and does not inherently represent anything 
+
+<dl>
+the HTML <dl> element represents a description list . the element encloses a list of groups of terms and descriptions common uses for this element are to implement to display metadata
+
+<main>
+the  HTML <main> element represents the main content of the <body> of a document  or application the main  content area consistes of content that is directly related to or expands upon the central topic
+
+<p> this element represents paragraph
+
+<pre>
+element represents performatted text with in this elements is typically  displayed  in a non portional (monospace)
+
+<ul> element represents an unordered list of items typically rendered as bullet list
+
+
+inline text semantics 
+the html inline text semantic to define the meaning structure or style of a word line or any arbitrary piece of text
+
+<a>  element creates a hyperlink to the other web pages files locations  with in the samepage emailadresses or any other URL
+
+<abbr>
+element represents an abbreviation and optionally provides a full description for it if present  the title attribute must cntain this full description 
+
+<b> 
+the  HTML <b> element represents a span of text stylistically different from normal text without conveying any special importance or relevance and that is typically rendered  in boldface 
+
+<var>
+element represents a variable in a mathematical expression or a programming context
+
+
+forms 
+provides a no of elements which can be used together to create forms which the user can fill out and submit to the web site or application 
+
+<button>
+the element represents a clickable button
+
+<datalist> element contains  a set of elements that represents the values available for other controls 
+
+<fieldest>
+element used to several controls as well as labels  with in a web forum
+
+<form> element represents a document section that conbtains interactive controls to submit information to a web server
+
+
+<output>
+element represent  the result of a calculation or user action 
+
+
+
+deffrence between html4 and html 5
+
+1 simplified and clear syntax 
+the syntax in html5 is extremely clear and simple as compared to html 4 one example of this is the DOCTYPE element . in HTML 4 the DOCTYPE  declaration was too messy and lengthy and used to refer an external sourse 
+however in html 5 doctype element has been made extremely simple .for instance a mere <!DOCTYPE html> is enough to specify the docummnet type 
+
+
+multimedia elements 
+html5 contains built in support for integrated multiplied files into web page via video and audio tags 
+
+accessing user geographical location
+previously html 4 ,it was an extremely cumbersome task to get the geographical locations of the visiors visting the site it was even difficult when the website was accessed through mobile devices
+
+client side storage 
+in html 4 in order to store important data on client side browsers cache was used however that cache is limited and doesnt support relational storage mechanism 
+in html 5 this issue has been addressed via web sql database application cache that can be access via html 5 javascript interface 
+
+client server communication
+in html 4 the communication between the client and server was done through streaming and long polling since there are no web pockets in html 4 
+html 5 contains web sockets that allow full duplex communications betwween clients and servers
+
+browser compatability
+html 4 is established standard for developing browser applications
+and has been in use for more than 10 years  for this reason html 4 is compatable with almost all web browsers
+on the other hand html 5 is still in th process of evolution and the currently available tags being modified and also new tags are being added 
+
+
+
+SEMANTIC ELEMENTS 
+
+<header>
+<nav>
+<section>
+<article>
+<aside>
+<footer>
+
+semantic elemts cleearly describes its meaning to both the browser and the developer 
+EXamples  of non semantic elements 
+<div> and <span> tells nothing about its content 
+
+examples semantic elements 
+<form> <table> and <article>
+CLEARLY defines its content
+
+STORAGE API
+the storage interface of the web storage provides access to the session storage or local storage for a particular domain allowing you to for example add, modify or delete stored data items 
+Storage API
+ stores key values pairs (this can only accomidate strings)
+storage
+.getItem('itemName');
+.setItem('itemName', 'itemValue'
+Storage API
+stores key values pairs (this can only accomidate strings)
+
+.getItem('itemName');
+.setItem('itemName', 'itemValue');
+removeItem('itemName');
+clear(); // remove all that are previously stored
+We have local storage and session storage
+
+Local Storage
+ Works in same domain
+ works in multiple tabs at the same time
+no expiration time
+
+
+Session Storage
+works in same domain
+works only in current tab.
+data will no longer be available if tab is closed or if you go to a diff domain
+
+
+
+
+.removeItem('itemName');
+			.clear(); // remove all that are previously stored
+	We have local storage and session storage
+
+	Local Storage
+		-- Works in same domain
+		-- works in multiple tabs at the same time
+		-- no expiration time
+
+
+	Session Storage
+		-- works in same domain
+		-- works only in current tab.
+		-- data will no longer be available if tab is closed or if you go to a diff domain
+
+
+
+
+
+
+
+METHODS 
+storage.key ()
+when passed a number  this method will return the name of the nth key in the storage 
+
+storage.getitem()
+when passed a key name and value will add that the key to the storage or update that keys value if it already exists
+
+storage.removeitem()
+when passed a key name will remove that key from the storage 
+
+
+storage clear()
+when invoked will empty keys out of the storage 
+
+ code snippets used in storage api
+ canvas code snippets 
+ code usable from web content 
+ getting the number of pixels of a certain color in canvas 
+ the following function will return the number of pixels in a canvas that have the rgb color of r g and b this can be very useful to compare for example if a user has painted over another area 
+
+
+secure data snippets 
+snippet 1 secure data sealing
+create new instance of secure data (using plaintext data)
+get the sealed blob of the secure data instance (data encrypted and signed)
+
+snippet 2 
+
+create an instance of secure data (using sealed data blob)
+get the data (plain text ) of the secure data instance 
+
+snippet3 secure data sealing with extra key 
+
+create an instance of secure data to hold the extra key 
+create an addtional instance of secure data 
+snippet 4 secure data with extra key unsealing
+snippet5  storage in secure storage 
+snippet 6 reading from secure storage 
+
+
+ diff between svg and canvas
+
+ svg is a language for describing 2d graphics in xml canvas draws 2d graphics on the fly witha javascript svg is xml based which means that everything element is available with in the svg DOM
+
+ scalable vector graphics (svg) is an xml based image format is used to define two dimensional vestor based graphics for the web a vector image can be scaled up or down to ay extent without losing the image quality 
+
+ actualy html 5 introduced the two graphical elements canvas and svg for creating rich graphics on the web but they are fundamentally different 
+
+svg
+ svg is vector based(shapes)   
+ multiple graphical elements which become the part of the dom
+ modified through script and css 
+ canvas
+ canvas raster based (pixel)
+ single html element similar to <img> in behaviour
+ modified through script only
+
+
+ list all mouse and keyboard events
+
+ onclick the event occur the user clicks on an element 
+
+ oncontextmenu the event occurs when the user right clicks on an element to open a context menu 
+
+ ondbllclick
+ the event occurs when the user double clicks on an element
+
+ on mouse down
+ the event occurs  when the user presses a mouse button  over an element 
+
+ onmousecenter 
+ the event occurs when the pointer is moved onto an element 
+
+ onmousesleave
+  the event occurs when the pointer is moved out of an element 
+
+  onmousemove
+  the event occurs when the pointer is moving while it is over an element 
+  onmouseover
+  the event occurs when the pointer is moved onto an element or onto one of its children 
+
+  onmouseout
+  the event occurs when a user moves the mouse pointer out of an element or out of one of its children
+
+  onmouseup
+  the event occurs when user releases a mouse button over an element 
+
+
+  keyboard events
+  onekeydown
+  the event occurs when the user is pressing a key 
+
+  onkey press 
+  the event occurs when the user passes a key 
+
+  onkeyup
+  the event occurs when the user releases a key 
+
+
+  what is event propagation
+   event bubbling and capturing two ways of event propagation  in the html DOM API when an event occurs in an element inside another element and both elements have registered a handle for that the event  with bubbling the event is first captured and handled by the innermost element and then propagated to outer elements 
+
+   what is event bubbling
+
+   it directs an event to its intended target it works like a button clicked and the vent is directed to the button 
+   if an event handler is set for that object the event bubbles uo (like a bubble in water to the objects parent
+
+   what is event delegation 
+
+   it refers to the process of using event propagation (bubbling) to handle events  at ahigher level in the DOM than the element on which  the even originated it allows us to attach a single event listner for elements that exists now or in the future 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

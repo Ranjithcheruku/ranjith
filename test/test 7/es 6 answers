@@ -1,0 +1,97 @@
+1q, What is block scoped variables and functions? explain by example?  why do we need to use them?
+  variables and functions that are declared inside another function are essentially hidden from any of the enclosing scopes which is an international design principle of good software in ecmascript 6 the let keyword is  introduced to allow declarations of variables in any arbitrary block of code.
+
+  module.export = {
+	entry : __dirname+'/indexj.js', // here u may write es 6 code
+	output : {
+	    path : __dirname,
+	    filename : 'bundle.js' // here will the es 5.1 code
+	},
+	devserver : {
+		inline : true, // if u see a file change (build, re run and re render)
+	    port : 3333
+
+	},
+	module : {
+	   cd this week loaders : [
+	     { 
+	     	test : /\.js$/. // all the files that has to loaded
+	     	exclude : /node_modules/. // the folder that must not be transpiled
+            loader : 'babel-loader',  // babel for transpilation
+            query : {
+	       	}	prsets : ['es2015', 'stage-1']
+	      
+	      }
+
+	   
+	    ]
+
+	}
+}
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		Hello World
+		<script src="bundle.js"></script>
+	</body>
+</html>
+
+
+{
+  "name": "hsiri",
+  "version": "1.0.0",
+  "description":"",
+  "main": "index.js",
+  "scripts": {
+    "start" "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+} "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1"
+  }
+}
+
+
+console.log(c);
+
+const pi = 3.16;
+console.log(pi);
+
+let multiply = (a,b) => a*b;
+
+console.log('multiplication of 4 & 5 is :', multiply(4,5));
+
+let square = (a) => a*a;
+console.log('the 6 square is :', square(6));
+
+//lexicle 
+
+let obj = {
+	fruits : ['apple','mango','banana','pineapple'],
+	func1 : function () {
+		var a = 20;
+		this.fruits.forEach((item)=>{
+			console.log(a)
+			this.func2(item);
+		});
+	
+  },
+  func2: function(param) {
+
+
+
+
+
+
+
+  

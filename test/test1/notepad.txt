@@ -1,0 +1,118 @@
+Week 1 : 
+
+list all data types in javascript?
+ -- possible values of each data types (range)
+ -- why do we use a certain data type
+
+ Ex
+ Boolean 
+ 	-- we use it in condtions
+ 	-- true, false
+ 
+list truthy and falsy value in javascript?
+
+typeof all data types
+ example 
+  typeof true ; // 'boolean'
+
+diff between = == ===
+
+logicall &&, logicall ||, logical ! differences and explaination
+{} && []
+{} || []
+
+diff b/w a !!a
+diff b/w 5 and !!5
+
+result datatypes of arithematic operators 
+
++ 
+-
+* 
+/
+%
+
+operator precendence?
+	follow up questions? what are the results of following?
+
+	'1'+2+3
+	'1'+2-3
+	'1'+2*3
+	1+2+'3'
+	22/10+'2'+52%3
+
+Wirte the following in seperate javascript files
+
+Write a program to print numbers from 10 to 100
+Write a program to check if a number is prime?
+write a program to find out greatest of a,b,c,d
+write a program to print if multiples 3 print fizz, else if multiples of 5 print buzz, else if multiples of both 3 and 5 fizzbuzz else  print number.     from 1 to 100
+
+
+
+
+Week 2 
+
+
+0 1 2 3 6 11 20 ...... <500
+
+check if a number is prime number?
+
+1 to 100 lo print all prime numbers
+
+
+
+Write description for all properties:
+
+String 
+	properties 
+
+		String.prototype
+		String.length
+
+For all methods 
+	-- parameter (list all parameters and each of theirs data types)
+	-- return (datatype of return value)
+	-- description -- elborate description of why we use and what it does internally
+	-- example how you can use it
+
+Sample Example for methods questions : 
+
+	String.prototype.charAt()
+	    -- parameters -- index -- number(datatype)
+	    -- return value -- character -- string(datatype)
+	    -- description -- takes the index value and returns the character available in that index value in a string.
+	    -- example : 'hello'.charAt(2); // 'l'; will be returned
+	
+	methods 
+		String.fromCharCode
+
+	prototype methods 
+		String.prototype.charAt
+						.charCodeAt
+						.concat
+						.endsWith
+						.includes
+						.indexOf
+						.lastindexOf
+						.match
+						.repeat
+						.slice
+						.split
+						.substr
+						.toUpperCase
+						.toLowerCase
+						.trim
+
+
+Write a program to mimic the funtionality of existing prototype methods in seperate java script files and show an example usage of these following methods.
+
+	prototype methods 
+		String.prototype.myConcat
+						.myIncludes
+						.myIndexOf
+						.myLastindexOf
+						.myRepeat
+						.mySlice
+						.myUpperCase
+						.myLowerCase

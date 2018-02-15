@@ -1,0 +1,248 @@
+
+
+1 what are the steps in downloading and including an angularjs ?
+
+they are 3 ways to to download the angular js 
+
+1.download the angularjs file and save it and include it in .html
+
+2.use content delivery network(CDN)link of the file angular js i,e <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+register an angular app in html
+<div ng-app='myApp'></div>
+
+3.register angular application in javascript
+angular.module('myApp',[])
+
+
+what are steps in setting up an angular application, write an example?
+every angular application written save in .HTML
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- setting angularapplication in the view-->
+<div ng-App='myApp'>
+<!-- setting ng-controller in the view-->	
+<div ng-controller='Firstctrl'>
+	<!--showing the first name in the view-->
+	<span ng-bind='firstName'></span>
+{{firstName}}
+<input type="text" name="lastName">
+{{lastName}}
+
+
+</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</body>
+</html>
+
+
+
+what are steps in registering a controller both in html and js with example?
+
+
+//[]--modules to be injected as dependencies
+in java script we write as
+angular.module('myApp'[]);
+//retrive the existing data of myApp
+angular.module('myApp')
+//registering a controller
+.controller('Firstctrl',function($scope)){
+	//registering a module with name  First Name
+	$scope.FirstName='javascript'
+});
+
+
+
+
+
+
+
+why do we use these directives ng-app, ng-model, ng-bind, ng-repeat, ng-controller, {{}}
+
+
+ng-app===
+
+ setting angularapplication in the view-
+ ex;<div ng-App='myApp'>
+
+ ng-model===
+listen to the changes and update the view
+
+ng-bind===
+only  observes the changes within the expresssion {{lastName}}
+listen to the changes and update the view at the end i,e;html(DOM)
+
+ng-controller===
+
+ setting ng-controller in the view-->
+<div ng-controller='Firstctrl'>
+
+$root scope -- available through out the application
+$scope--- only available to the current application
+
+
+
+
+
+-- diff between ng-if, ng-show, ng-hide?
+ng-if--
+we are removing from the document object model(DOM) and adding to the  other dom
+if true add to be dom
+if false remove from the dom
+
+ng-show--
+we use css to show the data in the web page
+if true show in the web page
+if false dont show in the web page
+ng-hide
+we use css to hide the data in the web page
+if true hide in the web page
+if false dont hide in the web page
+
+
+
+
+
+
+what is mvc, mvvm and two way data binding in angular js?
+
+mvc--(model view controller)
+MODEL-holding the data
+VIEW- showing the data in DOM 
+controller-actions to be performed
+
+
+mvvm--(model view view  module)
+MODEL-holding the data
+VIEW- showing the data in DOM 
+view  module-if they are any changes in the module changes ar amade and it shows in the dom and update immediately
+it is a continuos process
+<input type="text" ng-model="FirstName">
+{{FirstName}}
+
+
+
+
+-- diff between $rootScope and $scope?
+
+$root scope -- available through out the application
+$scope--- only available to the current application
+
+
+
+
+how to use filters in angular js?
+		-- uppercase, lowercase, orderBy, limitTo, filter, date, currency
+
+
+angular.module('myApp')
+defining a filter we want to reverse it
+.filter('reverse'function()){
+	we want date
+	if(type of date === 'string'&& date!===''){
+	return the value which we see
+	returndate.split('').reverse().join('');
+
+	}else{
+	return date;
+	}
+
+
+
+
+
+}
+
+
+
+})
+
+
+
+priority
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>priority</title>
+</head>
+<body>
+<div ng-app='myApp'>
+<div ng-controller='FirstCtrl'>
+enter a new task:<input type="text" ng-model="taskname"><br/>
+enter a prority:<input type="number" ng-model="prority"><br/>
+<button ng-click='add task()'>add task</button>
+<ul>
+	<li ng-repeat ='items in the todo|orderBy:'priority''>
+		
+the task name:{{item.task|reverse}},the priority is{{item.prority}}
+<button ng-click ='remove task(item)',>remove task</button>
+
+
+
+	</li>
+</ul>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script>
+	angular.module('myApp',[]);
+	angular.module('myApp')
+	.controller('FirstCtrl',['$scope',function($scope)])
+	$scope.todos=[];
+	$scope.addtask=function(){
+		var task=$scope.taskname;
+		var priority=$scope.priority;
+		$scope.taskname='';
+		$scope.priority='';
+		var obj={
+			task:task,
+			priority:priority
+		};
+		$scope.todos.push(obj);
+	}
+	$scope.removetask= function(item){
+		var index = -i;
+		for (var i = 0; i<$scope.todos.lenght; i++; ) {
+			if($scope.todos[i].prority===itemtask&&
+				$scope.todos[i].priority===item.priority)
+
+
+
+
+			}
+<$scope.todos.lenght;ci++ip
+if($scope.todos[i].prority===itemtask&&
+	$scope.todos[i].prority===item.prority){
+	index=i;
+break;
+
+}
+	}$scope.todos.splice(index,1);//removing task 
+}}])
+
+
+
+</html>
+
+

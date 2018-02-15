@@ -1,0 +1,116 @@
+
+
+Basics : 
+	1) what is non-blocking I/O?
+	2) what is asynchronous programming mean? benefits?
+	3) explain asynchronous programming example by an example?
+	4) how to load one node js module into your program?
+	5) when to use java or when to use node.js?
+	6) how to execute a javascript file using node.js
+	7) what is npm?
+	8) how to create a package.json using npm commands?
+	9) what are depedencies and devDependencies in package.json?
+	10) what is scripts in package.json and why do we use it?
+	11) How to install a module as dependencies using npm commands?
+	12) How to install a module as devDependencies using npm commands?
+	13) what is local dependency and global depedency in npm?
+	14) npm command to install a module globally?
+	15) diff between synchronous and asychronous javascript code?
+	16) what are callbacks in node.js?
+	17) write a program to synchronously read a file in node.js?
+	18) write a program to asynchronously read a file in node.js?
+	19) which one is better and why? synchronous or asynchronous read operation?
+
+Express &amp; REST development: 
+	20) What is express?
+	21) why do we use body-parser module in express?
+	22) what is a middleware in express? why do we use middlewares?
+	23) what is app.use? 
+	24) diff between get, post, put and delete?
+	25) write a program to implement a restful web service using express js and support GET, POST, PUT and DELETE operations?
+
+http://localhost:8080/users
+		-- method : GET
+		-- list of all users
+
+http://localhost:8080/users
+		-- method : POST
+		-- create a new user record
+			message format 
+				-- {
+					&quot;name&quot; : &quot;john&quot;,
+					&quot;age&quot;  : 23
+				}
+
+http://localhost:8080/users/:name
+example url : http://localhost:8080/users/john
+		-- method : PUT
+		-- update an existing user record
+			message format 
+				-- {
+					&quot;name&quot; : &quot;jhon&quot;,
+					&quot;age&quot;  : 23
+				}
+
+http://localhost:8080/users/:name
+example url : http://localhost:8080/users/john
+		-- method : DELETE
+		-- remove a existing record
+			
+	26) How to render static files using express
+	27) what is routing in express
+	28) what is middleware?
+	29) what is error handling middlware?
+
+MongoDB integartion
+	30) Diff between sql and nosql databases? 
+	31) when to use sql and when to use no sql?
+	32) write a program to connect to mondodb?
+	33) Write a program to integrate mongodb with express and perform CRUD operations?
+
+http://localhost:8080/users/
+		-- method : GET
+		-- list of all users
+
+http://localhost:8080/users/:id
+		-- method : GET
+		-- get a user matching this id else return no user found
+
+http://localhost:8080/users
+		-- method : POST
+		-- create a new user record
+			message format 
+				-- {
+					&quot;name&quot; : &quot;john&quot;,
+					&quot;age&quot;  : 23,
+					&quot;department&quot; : &quot;IT&quot;
+				}
+
+http://localhost:8080/users/:id
+example url : http://localhost:8080/users/3445e45e56e65f65
+		-- method : PUT
+		-- update an existing user record
+			message format 
+				-- {
+					&quot;name&quot; : &quot;john&quot;,
+					&quot;age&quot;  : 23,
+					&quot;department&quot; : &quot;Project Management&quot;
+				}
+
+http://localhost:8080/users/:id
+example url : http://localhost:8080/users/3445e45e56e65f65
+		-- method : DELETE
+		-- remove a existing record
+
+MEAN application : 
+	34) Integrate the mongodb based Express JS application with our angular JS TODO list application? 
+		-- Develop a todo application?
+		-- when page is loaded we need to have two inputs (name(string), age(number), department(string)) and an add item button
+		-- order by department
+		-- when you enter a name, age, department
+			-- click on add button 
+			-- new item has to be added into the list
+				-- new item needs to have (name, age, department, ID), remove item, edit item
+		-- We need to be able to add item, remove item, edit item, display list of all items.
+		-- if you have questions ask your instructor
+		-- for web services used the RESTful API you have developed using MongoDB, Express, Node.js 

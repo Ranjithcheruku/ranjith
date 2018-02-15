@@ -1,0 +1,270 @@
+list all data types in javascript?
+ -- possible values of each data types (range)
+ -- why do we use a certain data type
+
+ undefined
+ null
+ object
+
+ Boolean 
+ 	-- we use it in condtions
+ 	-- true, false
+ string
+    --we use it in statements
+      'hi' howare you''
+      string.repeat(5)the state will repeat for 5 times
+
+      numbers
+    --use to denote the values
+    --MAX_VALUE,MIN_VALUE
+
+ array
+ --group of similar elements
+ {"hello","how","are","you",}
+--push//add element at the end of array
+--pop//remove elemnet at the end of array
+--unshift//add elemnt at the start of arry
+--shift//remove element at the start of array--
+--slice//use to break the array
+--splice//used to replace the element from array
+
+
+// function
+
+list truthy and falsy value in javascript?
+// wrong
+truthy = 1 falsy = 0
+
+type of all data types 
+example
+
+
+typeof NaN ; // 'number'
+typeof null ; //  'object'
+typeof [] ; // object
+typeof undefined ; // 'undefined'
+typeof true; // 'boolean'
+var a =[1,0,2,3]
+type of a //object
+var a =["hello how are you" ]
+type of a // string
+var a =[hello how are you]
+type of a //undefined
+----
+var b 
+type of b; // undefined
+----
+type of NaN; // 'number'
+type of null;  // 'object'
+type of []; //'object'
+
+
+diffrence b/w = == ===
+to assign a value of rhs and lhs
+
+
+== will compare two values instance  4 ="4"
+===will compare two values and their type also
+ex 4 ="4"
+
+                         4= number
+                         "4" this is string
+
+logicall &&, logicall ||, logical ! differences and explaination
+{} && []
+{} || []
+
+// wrong
+
+logical&& logicall
+if a and b are equal it returns false value
+if and b are not equal it returns true value
+i,e then the condition only satisfies if both the condition are true
+
+logical  || logical
+if and b are then it returns true value
+if a and b are not equal it returns false value
+
+
+i,e the condition satisfies if either one statement is true
+
+diff b/w a!!a
+!!(not equal not equal is equal )so a and !!a are equal
+diff b/w5 and !!5
+ans !!(not equal not equal is equal) then 5 and !!5 are equal
+
+
+
+!(5) --> false
+!!5 --> true
+
+
+5  (number)
+
+!!5 --> true(1) (boolean)
+result datatypes of arithematic operators 
+
++  --> string, number
+- --> number
+* 
+/
+%
+
+operator prudence ?
+ans
+()
+*
+
+addition ,substraction
+example (2*3)+5
+6+5=11
+
+
+'1'+2+3 // '123'
+'1'+2-3 // 9 
+
+
+
+string properties
+
+string.prototype any thing you added to string.prototype it will be available to all the strings
+ string.prototype name (ranjith1,ranjith2){
+	return}
+
+string.prototype my index of = function(char){
+	var str =this;
+
+}
+var add = function (a,b){}
+return a+b;}
+
+function multiply(a,b);
+return a*b;
+
+
+string.length it will says the lenghth of the string
+
+ex:var a = 'ranjith'//length =5
+
+
+parameter (no ,all)
+            --datatypes?
+            return
+            --datatype?
+
+description'
+example how can use it
+
+
+sample  explanation
+prototype methods 
+		String.prototype.charAt
+						.charCodeAt
+						.concat
+						.endsWith
+						.includes
+						.indexOf
+						.lastindexOf
+						.match
+						.repeat
+						.slice
+						.split
+						.substr
+						.toUpperCase
+						.toLowerCase
+						.trim
+
+answer:
+string.prototype.charcodeAt()
+--parameters --index--number(datatype)
+--return value--character --string(datatype)
+--description--takes the index value and returns the character value number available in that index value in a string
+
+exampple: 'hello world'.charcodeAt(10);//
+101; will be returned(ascii table)
+description--we have left trim and right trim
+--example: var a = " how are you'
+
+
+console.log (a .leftrtrim)//'how are you
+console.log(a.righttrim)//'  how are you'
+
+
+
+string.prototype.substr()
+--parameters--string-
+--return value--string
+--description--returns the substring
+--example : var a = "how are you"
+console.log(a.substr(5,11))//"are you"
+
+
+
+
+string.prototype.touppercase()
+--parameter --string-
+--return value--uppercase character--string(datatype)
+--description --prints all uppercase letters in the string
+--example : a = 'HOW are you'
+console.log(a.toUpperCase);//'HOW ARE YOU'
+CONSOLE.LOG(asdfghjkl.
+touppercase());//ASDFGHJKL
+
+string.prototype.tolowercase()
+--parameters--string
+--return value--LOWER case character --string(dataype)
+--description--prints all the lower case letters in the string
+--example: a = 'HOW are you'
+console.log(a.tolowerCase);//'how are you'
+console.log (ABCDFGHTKL.
+touppercase());asdfghjkl
+
+
+string.prototype.concat()
+--parameters--twostring
+--returnvalue--string
+--description--adds the two strings
+--example:var a ={'how are you'}
+
+
+console.log(concat a );//{'how are you'}
+
+
+
+
+string.prototype..repeat()
+--parameters--string
+--return value--string
+--description--takes the string and returns
+the string with n multiples input user given
+--example : a = 'how are you'
+console.log(a.repeat(5));//
+
+
+string.prototype.slice()
+--parameters--string
+--return value--string
+--description--use to break the array
+--example:a =['how  'are' you']
+console.log(a.slice(1,2));//{'how'}
+
+string.prototype.splice()
+--parameters--first index ,delete count,items to be added
+--return value--1 if not founded
+--description--used to replace the element of the array
+--for example :a 'how are you'
+console.log(a.splice(2,0,hey);//'how are hey'
+
+string.protype.index()
+--parameters--string
+--returnvalue--  -1 if not founded
+--descrption--we are trying to search for item
+eaxmple:var a ='how are you'
+console.log(mylast indexof('y'))//8
+
+string.prototype..lastindexof()
+--parameters--string
+--return value--  -1 if not founded
+--description--we are trying to search for item
+--example:a ={'how are you'}
+console.log(a.slice(2,0));//{'how'},{'are,you'}

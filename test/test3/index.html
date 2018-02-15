@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="FirstCtrl">
+				
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myApp', [])
+			angular.module('myApp')
+				.controller('FirstCtrl', ['$scope', '$q', function($scope,$q){
+					var defer = $q.defer(); // create new defered object
+					defer.promise.then(function(resolveData){
+						console.log('data is resolved', resolveData)
+					},function(rejectData) {
+						console.log('promise is rejected', rejectData)
+					})
+					console.log('before resolve block invoked');
+					//defer.reject(34);
+					defer.resolve(23);
+					console.log('after resolve block invoked');
+
+				}]);
+			
+		</script>
+	</body>
+</html>

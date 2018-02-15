@@ -1,0 +1,79 @@
+Viewer 1@All: AngularJS
+
+basics
+	-- what are the steps in downloading and including an angularjs ?
+	-- what are steps in setting up an angular application, write an example?
+	-- what are steps in registering a controller both in html and js with example?
+
+inbuilt directives &amp; filters
+	-- why do we use these directives ng-app, ng-model, ng-bind, ng-repeat, ng-controller, {{}}
+	-- diff between ng-if, ng-show, ng-hide?
+	-- what is mvc, mvvm and two way data binding in angular js?
+	-- diff between $rootScope and $scope?
+	-- how to use filters in angular js?
+		-- uppercase, lowercase, orderBy, limitTo, filter, date, currency
+
+custom filter
+	-- write a new custom filter to reverse a string? code it
+
+
+Create a todo application using AngularJS with following requirements
+		-- use ng-repeat, 
+		
+		-- when the page loads 
+			-- There must be a two input (task name, priority) and a button (add task)
+			-- there must and empty ul
+		-- when you enter task name and priority and click on the button. 
+-- within the ul you must add a <li> task name, priority and remove button<li>. After the li is added the input boxes must be empty. 
+			-- So user can enter a new task name and priority. 
+			-- When you click on the remove button iniside the list item. The respective list item must be removed. 
+			-- the tasks must be ordered by priority always.
+
+Custom Directives :
+	-- what are directives in angular js and why do we use them?
+	-- what are custom directives in angular js? 
+		-- write all the below features by examples (code snippet are manditory) for all below features?
+			-- restrict
+			-- scope (shared, isolated, inherited), 
+				-- isolate scope with @, =, &amp;
+			-- template, 
+			-- templateUrl
+			-- transclude,
+			-- link,
+				-- scope, element, attrs
+
+Components :
+	-- what are components in angular? explain with example?
+	-- diff between components and directive?
+	-- when to use components instead of directive?
+	-- when not to use components instead of directives?
+	-- lifecycle methods in angular components? 
+	-- what are bindings in components 
+explain with <, @, =, & with examples (code snippet)
+	-- diff between controller with $scope and controllerAs Syntax with this keyword. why do we use them? why is it a good practice to use it?
+	-- intercomponent communication with example in angularjs?
+
+factories &amp; services?
+	-- Explain Factory and service by example and theory?
+	-- Diff between Factory and service? 
+
+Restful Web services &amp; http &amp; promises:
+	-- What are RESTful web services? 
+	-- Why do we use RESTful web services within ui?
+	-- What Do we use to invoke RESTful web services from UI(javascript)? 
+	-- What are http verbs? why do we use the following http verbs?
+		-- GET, post, PUT, Delete
+	-- what are http status and why do we use them? 
+	-- what are the commonly used HTTP Status code? what is the meaning of each HTTP status code?
+	-- Explain $http and $q with example?
+	-- What is a promise? what is deffered object? Why we use them?
+	-- What is promise chaining? why do we use them?
+	-- what are providers in angular js?
+	-- what is promise chaining? write a sample code?
+	-- what is callback hell? what is solution for to avoid call back hell?
+	-- Angular JS
+
+Angular methods
+	-- when do you use a .config, .run method in angularjs?
+	-- what is the sequence of executions? 
+		-- config method, run method, directive template, directive link function, controllers

@@ -1,0 +1,359 @@
+what is non blocking i/o?
+node js is built up on linux , across platform library that abstract apis/syscalls for asynchronous (non blocking)input/output provided by the supported OSes like unix os x and windows
+
+what is asynchronous programming mean? benefits?
+it means of parallel programming in which a unit of work runs seperately from the main application thread and notifies the calling thread of its completion failure or progree 
+
+benefits of asynchronous programmin  
+1 such as improved application performance and enhanced responsiveness its not the thingthat we should use in every instance there are some situations in which we  should avoid it asynchronous programming has actually been around for a long time 
+
+simple processing of independent data is a great plca for asynchronous programming and provides a better ux
+
+in mobile applications to prevent the freezing of the screen and give the customer the impression that the process is taking actions visually
+
+
+
+4q how to load one node js module into your program?
+
+using common.js loader we can load node modules into our node programs 
+
+-> var var name = require ('module name' );
+
+
+
+5q?when to use java or when to use node.js?
+
+Node.js
+node process executes on one main thread and it uses a number of background threads for performaing tasks ,
+for performing tasks it uses a queue for communication between main and background thread.
+the thread will pickup tasks from the queue and background operations will execute  call back function supplied after execution .
+So in Node.js, we don't need to worry about the threading and locking or data consistency as only your main thread will be changing your data. So concurrency is pretty simple in Node.js.
+But the problem with the node is only one thread will be executing your tasks.You can not start the new thread and run the tasks on it. though parallelism in node achieved through processes using node cluster library and it uses IPC for communication.
+
+JAVA
+On the other hand, Java runs as a single process and it uses threads. Each request is handled by its own thread and now in Java, you can also do non-blocking IO using the threads and RxJava so now it's not the main reason for comparison anymore. but threads uses shared memory for a faster communication between threads and due to that, it may possible that you will run into deadlocking a process if it's poorly designed.
+
+WHAT IS NPM?
+node package manager for node js packages or modules a package in node js contains all the files we need for a module
+
+how to create a package .json using npm commands?
+
+publishing the package to npm
+making a new directory  outside of the project and cd into it run npm install<package>
+creating a test file which requires the package and calls the method run the node test js that displays message shoild be the output 
+
+package.json 
+all node js modules could be listed over here it will help us to download all npm modules at once 
+
+9) what are depedencies and devDependencies in package.json?
+command to put node module into dependencies 
+npm install save module name 1 module name 2 and used to run the project
+
+dev dependencies 
+it is used to run the build 
+command to put node module into dpendencies 
+npm install -save -dev module name 1 module name 2 
+
+if we want to download both dependencies and dev dependencies npm install 
+load all the dependencies and devdependencies listed
+
+
+What is  scripts in package.json
+npm supports the "scripts" property of the package.json file, for these kind of scripts 
+prepublish: Run BEFORE the package is packed and published, as well as on local npm install without any arguments. 
+
+prepare: Run both BEFORE the package is packed and published, and on local npm install without any arguments
+This is run AFTER prepublish, but BEFORE prepublish 
+prepublishOnly: Run BEFORE the package is prepared and packed, ONLY on npm publish.
+prepack: run BEFORE a tarball is packed (on npm pack, npm publish, and when installing git dependencies)
+postpack: Run AFTER the tarball has been generated and moved to its final destination.
+publish, postpublish: Run AFTER the package is published.
+preinstall: Run BEFORE the package is installed
+install, postinstall: Run AFTER the package is installed.
+preuninstall, uninstall: Run BEFORE the package is uninstalled.
+postuninstall: Run AFTER the package is uninstalled.
+preversion: Run BEFORE bumping the package version.
+version: Run AFTER bumping the package version, but BEFORE commit.
+postversion: Run AFTER bumping the package version, and AFTER commit.
+pretest, test, posttest: Run by the npm test command.prestop, stop, poststop: Run by the npm stop command.
+prestart, start, poststart: Run by the npm start command.
+prerestart, restart, postrestart: Run by the npm restart command. Note: npm restart will run the stop and start scripts if no restart script is provided.
+preshrinkwrap, shrinkwrap, postshrinkwrap: Run by the npm shrinkwrapcommand.
+
+How to install a module as dependencies using npm commands?
+ For example if we want to install all the dependencies  npm modules for a sample project we need to create a folder as example folder  just we need to go inside the sample project folder and simple we need to run the command as $npm-install-all
+ all the node modules saved in 'dependencies' property.
+
+ Glabal dependency and local dependency
+globally — This drops modules in {prefix}/lib/node_modules, and puts executable files in {prefix}/bin, where {prefix} is usually something like /usr/local. It also installs man pages in {prefix}/share/man, if they’re supplied.
+locally —- This installs your package in the current working directory. Node modules go in ./node_modules, executables go in ./node_modules/.bin/, and man pages are not installed at all.
+
+Which to choose
+Whether to install a package globally or locally depends on the global config, which is aliased to the -g command line switch.
+Just like how global variables are kind of gross, but also necessary in some cases, global packages are important, but best avoided if not needed.
+In general, the rule of thumb is:
+1.	If we are installing something that we  want to use in our program, using require('whatever'), then install it locally, at the root of our project.
+2.	If we’re installing something that we want to use in our shell, on the command line or something, install it globally, so that its binaries end up in our PATH environment variable.
+
+When you can't choose
+Of course, there are some cases where 	we want to do both. Coffee-script and Express both are good examples of apps that have a command line interface, as well as a library. In those cases, we can
+
+Install it globally, and then npm link coffee-script or npm link express (if we’re on a platform that supports symbolic links.) Then we only need to update the global copy to update all the symlinks as well.
+
+npm command to install a module for globally
+to install a package globally or locally depends on the global config, which is aliased to the -g command 
+
+
+difference between synchronous and asynchronous javascript code
+The difference between these two approaches is 
+
+Synchronous way: It waits for each operation to complete, after that only it executes the next operation. For your query: The console.log() command will not be executed until & unless the query has finished executing to get all the result from Database.
+Asynchronous way: It never waits for each operation to complete, rather it executes all operations in the first GO only. The result of each operation will be handled once the result is available. For our query: The console.log() command will be executed soon after the Database.Query()method. While the Database query runs in the background and loads the result once it is finished retrieving the data.
+Use cases
+1.	If our operations are not doing very heavy lifting like querying huge data from DB then we need to  go ahead with Synchronous way otherwise Asynchronous way.
+2.	In Asynchronous way we can show some Progress indicator to the user while in background we can continue with our heavy weight works.
+
+What are call backs in node js
+Node.js, being an asynchronous platform, doesn't wait around for things like file I/O to finish - Node.js uses callbacks. A callback is a function called at the completion of a given task; this prevents any blocking, and allows other code to be run in the meantime
+
+write a program to synchronously read a file in node.js,
+Node will continue executing any javascript code it encounters while reading the file. Once all javascript is done being executed and the file is ready, it will run the anonymous function and print the file contents.
+You can do the same task synchronously:
+var fs = require('fs');
+var contents = fs.readFileSync('/etc/passwd').toString();
+console.log(contents);
+In this example, contents will be set to the contents of the file, and no javascript code will be executed while the file is being read
+
+
+
+write a program to synchronously read a file in node.js,
+
+This API follows a standard pattern of exposing 2 functions for each operation: one for asynchronous work, and the other for synchronous work. For example, if we  want to read a file in Node we can do so asynchronously:
+var fs = require('fs');
+fs.readFile('/etc/passwd', function(err, buf) {
+  console.log(buf.toString());
+});
+
+
+which one is better and why  synchronous or asynchronous read file operation in node js
+ the difference between blocking and non-blocking calls in Node.js. This overview will refer to the event loop and libuv but no prior knowledge of those topics is required. Readers are assumed to have a basic understanding of the JavaScript language and Node.js callback pattern.
+"I/O" refers primarily to interaction with the system's disk and network supported by libuv.
+
+
+Blocking
+Blocking is when the execution of additional JavaScript in the Node.js process must wait until a non-JavaScript operation completes. This happens because the event loop is unable to continue running JavaScript while a blocking operation is occurring.
+In Node.js, JavaScript that exhibits poor performance due to being CPU intensive rather than waiting on a non-JavaScript operation, such as I/O, isn't typically referred to as blocking. Synchronous methods in the Node.js standard library that use libuv are the most commonly used blocking operations. Native modules may also have blocking methods.
+All of the I/O methods in the Node.js standard library provide asynchronous versions, which are non-blocking, and accept callback functions. Some methods also have blocking counterparts, which have names that end with Sync.
+
+Comparing Code
+Blocking methods execute synchronously and non-blocking methods execute asynchronously.
+Using the File System module as an example, this is a synchronous file read:
+const fs = require('fs');
+const data = fs.readFileSync('/file.md'); // blocks here until file is read
+And here is an equivalent asynchronous example:
+const fs = require('fs');
+fs.readFile('/file.md', (err, data) => {
+  if (err) throw err;
+});
+
+
+What is express  
+Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It is in fact the standard server framework for Node.js.
+
+
+Why we use body parser in express.js
+ 
+in order to read HTTP POST data , we have to use "body-parser" node module. body-parser is a piece of express middleware that reads a form's input and stores it as a javascript object accessible through req.body  
+	 
+With express we can read any data inside HTTP request, such as headers req.headers (array), you can read the body of the http packet as req.body explained by CleanCrispCode and we can read as query parameter req.query.variable, It helps since express automatically transforms the request in javascript objects 
+
+Node.js body parsing middleware.
+Parse incoming request bodies in a middleware before our handlers, available under the req.bodyproperty.
+
+
+API
+var bodyParser = require('body-parser')
+The bodyParser object exposes various factories to create middlewares. All middlewares will populate the req.body property with the parsed body when the Content-Type request header matches the type option, or an empty object ({}) if there was no body to parse, the Content-Typewas not matched, or an error occurred.
+The various errors returned by this module are described in the errors section.
+
+bodyParser.json([options])
+Returns middleware that only parses json and only looks at requests where the Content-Typeheader matches the type option. This parser accepts any Unicode encoding of the body and supports automatic inflation of gzip and deflate encodings.
+A new body object containing the parsed data is populated on the request object after the middleware (i.e. req.body).
+
+
+what is a middleware in  express why do we use
+
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. The next function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware.
+Middleware functions can perform the tasks like
+•	Execute any code.
+•	Make changes to the request and the response objects.
+•	End the request-response cycle.
+•	Call the next middleware in the stack.
+
+If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
+
+the elements of middleware function call
+
+var express = require ('express');
+var app = express();
+
+
+app.get('/',function(req,res,next){
+	next();
+})
+
+app.listen(3000);
+
+HTTP method for which the middleware function applies
+Path (route) for which the middleware function applies
+The middleware function.
+Callback argument to the middleware function, called "next" by convention
+HTTP response argument to the middleware function, called "res" by convention
+HTTP request argument to the middleware function, called "req" by convention
+
+an example of a simple “Hello World” (Express application) The remainder of this article will define and add two middleware functions to the application: one called myLogger that prints a simple log message and another called requestTime that displays the timestamp of the HTTP request.
+var express = require('express')
+var app = express()
+
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+
+what is app.use
+Bind application-level middleware to an instance of the app object by using the app.use() and app.METHOD() functions, where METHOD is the HTTP method of the request that the middleware function handles (such as GET, PUT, or POST) 
+
+
+
+deffrence between get post put delete
+
+•	GET to get the resource
+•	PUT to update
+•	POST to Insert
+•	DELETE to delete
+
+	Because the HTTP GET method is specified as idempotent, a GET request, by specification, can be resubmitted with the assumption that it will not change anything on the server. This is not the case for a HTTP POST which by specification can change the status of the application running on the server.
+So, by specification, one can perform an HTTP GET against a page N number of times without worrying of being changing its status.
+Not respecting the specification may have various undesired results.
+ For example, Web crawlers follow through GET request to index a site, but not POST. If you allowed an HTTP GET request to make changes to the database, we can easily understand the undesired implication it can have.
+Respecting a specification is like respecting an agreement between your service or website and an array of different consumers which can be normal users' browsers but also other services like web crawlers.
+we could build a site that uses a GET to insert a record, but we should also expect that whatever is built around to consume your site is functioning with the assumption that you are respecting the agreement.
+ last example, web browsers warn users when they try to refresh a page that was reached by a HTTP POST request warning that some data might be resubmitted. we do not get that layer of protection built-in browsers if the page is reached by a HTTP GET request.
+
+
+How to render static files using express
+To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.
+The function signature is:
+
+express.static(root, [options])
+The root argument specifies the root directory from which to serve static assets.  
+
+express.static.
+For example,we  use the code to serve images, CSS files, and JavaScript files in a directory named public:
+app.use(express.static('public'))
+
+
+what is routing in express
+Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).
+Each route can have one or more handler functions, which are executed when the route is matched.
+Route definition takes the following structure:
+app.METHOD(PATH, HANDLER)
+Where:
+•	app is an instance of express.
+•	METHOD is an HTTP request method, in lowercase.
+•	PATH is a path on the server.
+•	HANDLER is the function executed when the route is matched.
+
+
+What is a middle ware
+software that acts as a bridge between an operating system or database and applications, especially on a network.
+
+middle ware can perform the task like 
+1,end the request response cycle 
+execute any code
+make changes to the rquest and response objects 
+call the next middle ware function in the task
+
+What is an error handling middle ware?
+Express middleware is broken up into different types based on the number of arguments your middleware function takes. A middleware function that takes 4 arguments is classified as "error handling middleware", and will only get called in an error occurs.
+
+
+difference between sql and no sql
+
+relational databases :
+tables 
+rows
+columns
+result set 
+relations : foreign key having relations between tables 
+transactions: very good to use in transactional systems 
+scalability : no easy or no options 
+1gb or 10gb more than this its very critical to make worth with relational data base systems
+
+
+
+no sql databases mongodb:
+
+collections
+documents 
+columns
+
+result 
+json
+
+international storage 
+bson
+
+transactions: 
+they are supporting through atomic operations 
+not a direct support but a work around solutions
+
+relations: it does not support 
+scalability support for vertical and horizontal support 
+we can plug a new server or distribute data across multiple db servers 
+
+availability :high availability 
+
+replication factor :
+
+the data will stared redundently 
+for backup purpose if some data is lost 
+
+
+    
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

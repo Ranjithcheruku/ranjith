@@ -1,1 +1,1 @@
-alert("Method #3: Welcome from External file!");
+"Method #3: Welcome from External file!");
